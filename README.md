@@ -9,4 +9,4 @@ prerequis
 
 usage
 - clone this respository
-- run the "setup.sh"
+- run the "setup.sh" to create the environnement
