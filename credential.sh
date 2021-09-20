@@ -15,7 +15,7 @@ cd  temp/
 # build the certificate
 echo '{"CN":"'$TTS_SUBJECT_ORGANIZATION CA'","key":{"algo":"rsa","size":2048},"names":[{"C":"'$TTS_SUBJECT_COUNTRY'","ST":"'$TTS_SUBJECT_STATE'","L":"'$TTS_SUBJECT_LOCATION'","O":"'$TTS_SUBJECT_ORGANIZATION'"}]}' > ca.json
 cfssl genkey -initca ca.json | cfssljson -bare ca
-echo '{"CN":"'$TTS_DOMAIN'","hosts":["'$TTS_DOMAIN'","localhost","'$(echo $IP_LAN | sed 's/,/\",\"/')'"],"key":{"algo":"rsa","size":2048},"names":[{"C":"'$TTS_SUBJECT_COUNTRY'","ST":"'$TTS_SUBJECT_STATE'","L":"'$TTS_SUBJECT_LOCATION'","O":"'$TTS_SUBJECT_ORGANIZATION'"}]}' > cert.json
+echo '{"CN":"'$TTS_DOMAIN'","hosts":["'$TTS_DOMAIN'","localhost"],"key":{"algo":"rsa","size":2048},"names":[{"C":"'$TTS_SUBJECT_COUNTRY'","ST":"'$TTS_SUBJECT_STATE'","L":"'$TTS_SUBJECT_LOCATION'","O":"'$TTS_SUBJECT_ORGANIZATION'"}]}' > cert.json
 cfssl gencert -hostname "$TTS_DOMAIN,localhost,$IP_LAN" -ca ca.pem -ca-key ca-key.pem cert.json | cfssljson -bare cert 
 
 # rename

@@ -10,3 +10,11 @@ prerequis
 usage
 - clone this respository
 - run the "setup.sh" to create the environnement
+- run "exec.sh" to configure the local TTS
+
+finally start the local TTS 
+$ docker-compose up
+
+last step :  install this docker-compose as daemon... 
+
+TODO : smtp configuration... tutorial and some documentation 

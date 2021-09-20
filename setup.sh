@@ -61,15 +61,3 @@ sed -i -e "s/{{domain}}/${TTS_DOMAIN}/g" $DOCKER_FILE
 
 # Certificates are rebuild on subject change
 sh credential.sh
-
-# mkdir -p srv/data
-# DATA_FOLDER=${PWD}/srv/data
-# DATA_FOLDER_ESC=$(echo "${DATA_FOLDER}" | sed 's/\//\\\//g')
-
-# cp ca.pem ${DATA_FOLDER}/ca.pem
-# cp ca-key.pem ${DATA_FOLDER}/ca-key.pem
-# cp cert.pem ${DATA_FOLDER}/cert.pem
-# cp cert-key.pem ${DATA_FOLDER}/key.pem
-# chmod 664 srv/data/*.pem
-
-sh exec.sh
