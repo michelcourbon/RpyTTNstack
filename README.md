@@ -5,7 +5,7 @@ OS = ubuntu server 64 bits
 
 prerequis
 - install Docker and docker-compose 
-- install cfssl to generate certificates
+- install cfssl to generate certificates ($ sudo apt install golang-cfssl)
 
 usage
 - clone this respository
